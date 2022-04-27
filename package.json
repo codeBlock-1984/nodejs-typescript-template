@@ -1,0 +1,61 @@
+{
+  "name": "nodejs-typescript-template",
+  "version": "1.0.0",
+  "description": "Template for NodeJS Typescript projects",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "start": "node dist/server.js",
+    "build": "npx tsc --project ./",
+    "serve": "nodemon --watch './**/*.ts' --exec 'ts-node' src/server.ts",
+    "prisma:save": "npx prisma migrate --create-only --preview-feature",
+    "prisma:dev": "npx prisma migrate dev --preview-feature",
+    "prisma:generate": "npx prisma generate",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeBlock-1984/nodejs-typescript-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeBlock-1984/nodejs-typescript-template/issues"
+  },
+  "homepage": "https://github.com/codeBlock-1984/nodejs-typescript-template#readme",
+  "prisma": {
+    "schema": "src/database/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.12.0",
+    "@types/morgan": "^1.9.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.0",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.1",
+    "@types/node-cron": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.3",
+    "nodemon": "^2.0.14",
+    "prisma": "^3.12.0",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.5.2"
+  }
+}
